@@ -5,16 +5,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname));
 
-const stripe = require('stripe')('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');
-//sk_test_51Ifhe0LkQ1xbpEUQZBVP3fDsfuA3NdNlTF12ZPyqavHhXHWLIpfOfPJc7B3LVvFYjmNguhirQ2YSdGIODdJxc4cc00WTsBHSwr
-//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
+const stripe = require('stripe')(''); //API Key 
 
-//price_1IjpVgLkQ1xbpEUQE79DiqIj
-//price_1IjpVgLkQ1xbpEUQ0eOm20MW
-
-//test
-//price_1Ijpz3LkQ1xbpEUQynLI34VR
-//price_1Ijpz3LkQ1xbpEUQIROkKlwg
 //==============================================================================================//
 let custid;
 let plan;
@@ -103,9 +95,6 @@ app.post('/hook', (request, response) => {
 l = request.body.type;
 p = l === 'invoice.payment_action_required' || l ===  'invoice.payment_failed' ? request.body.data.object.hosted_invoice_url : 'Na';
 
-console.log(l)
-console.log(p);
-
 response.status(200).end();
 });
 
@@ -114,7 +103,7 @@ app.post('/result', (re, res) => {
     if(l === 'payment_intent.succeeded') {res.status(200).json({'title': 'Successful'});}
 
     if(l === 'invoice.payment_failed') {
-      //del();
+
         res.status(200).json(
           {
             'title': 'Card Failed',
@@ -141,8 +130,3 @@ app.listen(
     () => console.log(`listening on - http://localhost:${port}`)
   );
 
-
-//   res.status(200).json({
-//     'title': 'Successful',
-//     'result': customer
-//   });
