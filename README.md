@@ -1,1 +1,1 @@
-# jamallos-indicator
+# Jamallos-indicator
