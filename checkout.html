@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="checkout.css">
+    <script src="checkout.js" defer></script>
+    <title>Jamallo Indicators</title>
+</head>
+<body>
+
+
+    <div class="checkout">
+
+        <div class="checkout-header">
+          <h1 class="checkout-title">
+            Checkout | Debit/Credit Card
+          </h1>
+        </div>
+
+        <p>
+          <input type="text" class="checkout-input checkout-name" placeholder="Your name">
+          <select style="width: 21%" class="checkout-input checkout-exp" placeholder="MM">
+            <option default disabled selected hidden>MM</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="05">06</option>
+            <option value="05">07</option>
+            <option value="05">08</option>
+            <option value="05">09</option>
+            <option value="05">10</option>
+            <option value="05">11</option>
+            <option value="05">12</option>
+          </select>
+          <select style="width: 30%" class="checkout-input checkout-exp" placeholder="YY">
+            <option default disabled selected hidden>Year</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+          </select>
+        </p>
+
+        <p>
+          <input type="text" class="checkout-input checkout-card" placeholder="4111 1111 1111 1111">
+          <input type="text" class="checkout-input checkout-cvc" placeholder="CVC">
+        </p>
+        <hr>
+        <p>
+            <input type="text" style="width: 100%;" class="checkout-input checkout-card" placeholder="Email">
+            <br><br><br>
+            <input type="text" style="width: 100%;" class="checkout-input checkout-card" placeholder="Trading View Username">
+        </p>
+
+        <p>
+          <input type="submit" value="Subscribe" class="checkout-btn">
+        </p>
+
+        <p style="color: red;">One or more field is incorrectly formatted</p>
+    </div>
+
+      <div class="loading">
+        <div class="loader"></div>
+        <h1>Processing...</h1>
+    </div>
+
+    <div class="success">
+        <h1>Payment was Successful</h1>
+        <h1>Indicator Will be delivered to your Trading View Account, Within 24hours</h1>
+    </div>
+    
+    <div class="failed">
+        <h1>Payment Failed</h1>
+        <button class="checkout-btn">Retry</button>
+    </div>
+
+    <div class="action">
+        <h1>Confirm Card</h1>
+        <h3>Your Bank Requires Additional Authentication</h3>
+        <h4>After you confrim your card. Indicator will be delivered to your Trading View Account within 24 hours.</h4>
+        <button class="checkout-btn">Continue</button>
+    </div>
+
+
+    <p class="info">For PayPal payment or for any card payment issue Contact Jamallo.<br>
+      Discord: Jamallo#5671 <br>
+      Email: jamallo369@gmail.com
+    </p>
+
+</body>
+</html>

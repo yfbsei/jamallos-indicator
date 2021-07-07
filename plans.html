@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png">
+    <style>
+  .plans {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  }
+  .columns {
+  box-sizing: border-box;
+  width: 40%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button2 {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+    </style>
+    <title>Jamallo Indicators</title>
+</head>
+<body>
+
+  <div class="plans">
+    <div class="columns">
+        <ul class="price">
+          <li class="header">Monthly</li>
+          <li class="grey">$ 10.00 / Month</li>
+          <li>Jamallo's - Trend Sniper</li>
+          <li>Live Updates</li>
+          <li>Future Promotionals</li>
+          <li>24/7 Support</li>
+          <li class="grey"><a href="checkout.html" class="button2 plan1">Subscribe</a></li>
+        </ul>
+      </div>
+
+      <div class="columns">
+        <ul class="price">
+          <li class="header">Yearly</li>
+          <li class="grey">$ 100.00 / Yearly</li>
+          <li>Jamallo's - Trend Sniper</li>
+          <li>Live Updates</li>
+          <li>Future Promotionals</li>
+          <li>24/7 Support</li>
+          <li class="grey"><a href="checkout.html" class="button2 plan2">Subscribe</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+
+      document.querySelector(".plan1").addEventListener("click", ()=> {
+      const plan = "price_1IjpVgLkQ1xbpEUQE79DiqIj";
+      send(plan);
+      });
+
+      document.querySelector(".plan2").addEventListener("click", ()=> {
+      const plan = "price_1IjpVgLkQ1xbpEUQ0eOm20MW";
+      send(plan);
+      });
+
+      const send = plan => { 
+      fetch('plan', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          plan: plan
+        })
+    })
+  } 
+
+      </script>
+</body>
+</html>
